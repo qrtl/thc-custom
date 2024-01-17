@@ -1,6 +1,6 @@
-================================
-Parent Partner Creation Restrict
-================================
+===========================
+Partner Group Partner Admin
+===========================
 
 .. 
    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -17,13 +17,15 @@ Parent Partner Creation Restrict
     :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
     :alt: License: AGPL-3
 .. |badge3| image:: https://img.shields.io/badge/github-qrtl%2Fthc--custom-lightgray.png?logo=github
-    :target: https://github.com/qrtl/thc-custom/tree/16.0/parent_parnter_creation_restrict
+    :target: https://github.com/qrtl/thc-custom/tree/16.0/partner_group_partner_admin
     :alt: qrtl/thc-custom
 
 |badge1| |badge2| |badge3|
 
-This module restricts the creation and editing of parent partners,
-except for certain authorized user groups.
+This module adds the partner administrator group to do the following:
+
+-  Limits the creation and edition of commercial partners to the partner
+   administrator.
 
 **Table of contents**
 
@@ -36,7 +38,7 @@ Bug Tracker
 Bugs are tracked on `GitHub Issues <https://github.com/qrtl/thc-custom/issues>`_.
 In case of trouble, please check there if your issue has already been reported.
 If you spotted it first, help us to smash it by providing a detailed and welcomed
-`feedback <https://github.com/qrtl/thc-custom/issues/new?body=module:%20parent_parnter_creation_restrict%0Aversion:%2016.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
+`feedback <https://github.com/qrtl/thc-custom/issues/new?body=module:%20partner_group_partner_admin%0Aversion:%2016.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
 
 Do not contact contributors directly about support or help with technical issues.
 
@@ -51,6 +53,6 @@ Authors
 Maintainers
 -----------
 
-This module is part of the `qrtl/thc-custom <https://github.com/qrtl/thc-custom/tree/16.0/parent_parnter_creation_restrict>`_ project on GitHub.
+This module is part of the `qrtl/thc-custom <https://github.com/qrtl/thc-custom/tree/16.0/partner_group_partner_admin>`_ project on GitHub.
 
 You are welcome to contribute.
