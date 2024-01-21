@@ -8,6 +8,13 @@ from odoo.exceptions import UserError
 class ResPartner(models.Model):
     _inherit = "res.partner"
 
+    def signup_prepare(self, signup_type="signup", expiration=False):
+        # Signup token seems to get generated for followers with no portal access when
+        # "free signup" is enabled and an unauthorized user mentions a partner (any
+        # partner) in a message. We should skip the check in this case.
+        self = self.with_context(skip_partner_check=True)
+        return super().signup_prepare(signup_type=signup_type, expiration=expiration)
+
     @api.model
     def _user_is_partner_admin(self):
         return self.env.user.has_group(
