@@ -16,6 +16,33 @@
                     groups="stock.group_stock_manager"
                 />
             </xpath>
+            <xpath expr="//field[@name='accounting_date']" position="attributes">
+                <attribute name="groups">stock.group_stock_manager</attribute>
+            </xpath>
+            <xpath expr="//field[@name='user_id']" position="attributes">
+                <attribute name="readonly">1</attribute>
+                <attribute name="groups">!stock.group_stock_manager</attribute>
+            </xpath>
+            <xpath expr="//field[@name='user_id']" position="after">
+                <field
+                    name="user_id"
+                    string="User"
+                    optional="show"
+                    groups="stock.group_stock_manager"
+                />
+            </xpath>
+            <xpath
+                expr="//button[@name='action_set_inventory_quantity']"
+                position="attributes"
+            >
+                <attribute name="groups">stock.group_stock_manager</attribute>
+            </xpath>
+            <xpath
+                expr="//button[@name='action_set_inventory_quantity_to_zero']"
+                position="attributes"
+            >
+                <attribute name="groups">stock.group_stock_manager</attribute>
+            </xpath>
         </field>
     </record>
 </odoo>

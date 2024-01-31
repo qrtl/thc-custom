@@ -29,8 +29,8 @@ functions.
    'Inventory / Manager'.
 -  Gives 'Inventory / Officer' access to the *Inventory > Reporting*
    menu node.
--  Makes 'Counted Quantity' field of Inventory Adjustments readonly for
-   users without Inventory/Administrator group.
+-  Makes some fields and buttons of Inventory Adjustments list view
+   readonly for users without Inventory/Administrator group.
 
 **Table of contents**
 
