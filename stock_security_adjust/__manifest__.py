@@ -7,7 +7,7 @@
     "website": "https://www.quartile.co",
     "category": "Security",
     "license": "LGPL-3",
-    "depends": ["stock"],
+    "depends": ["stock_account"],
     "data": [
         "security/stock_security.xml",
         "data/ir_ui_menu_views.xml",
