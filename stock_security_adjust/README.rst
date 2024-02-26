@@ -30,7 +30,8 @@ functions.
 -  Gives 'Inventory / Officer' access to the *Inventory > Reporting*
    menu node.
 -  Makes some fields and buttons of Inventory Adjustments list view
-   readonly for users without Inventory/Administrator group.
+   invisible, as well as hiding the menu item for users without
+   Inventory/Administrator group.
 
 **Table of contents**
 
