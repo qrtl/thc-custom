@@ -43,6 +43,8 @@ class ResPartner(models.Model):
             return super().write(vals)
         if not self.filtered(lambda x: not x.parent_id) and "parent_id" not in vals:
             return super().write(vals)
+        if self.ids == [self.env.user.partner_id.id]:
+            return super().write(vals)
         if len(vals) > 1 or "child_ids" not in vals:
             self._raise_partner_error()
         # There can be an unwanted error when updating a child partner through the
