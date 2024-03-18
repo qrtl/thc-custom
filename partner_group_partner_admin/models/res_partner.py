@@ -39,11 +39,12 @@ class ResPartner(models.Model):
         return res
 
     def write(self, vals):
+        # No restriction with update of own partner.
+        if self.ids == [self.env.user.partner_id.id]:
+            return super().write(vals)
         if self._user_is_partner_admin() or self._context.get("skip_partner_check"):
             return super().write(vals)
         if not self.filtered(lambda x: not x.parent_id) and "parent_id" not in vals:
-            return super().write(vals)
-        if self.ids == [self.env.user.partner_id.id]:
             return super().write(vals)
         if len(vals) > 1 or "child_ids" not in vals:
             self._raise_partner_error()
