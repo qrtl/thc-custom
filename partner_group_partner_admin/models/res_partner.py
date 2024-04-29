@@ -39,6 +39,9 @@ class ResPartner(models.Model):
         return res
 
     def write(self, vals):
+        # No restriction for password reset via login page (i.e. user is a public user).
+        if self.env.user == self.env.ref("base.public_user"):
+            return super().write(vals)
         # No restriction with update of own partner.
         if self.ids == [self.env.user.partner_id.id]:
             return super().write(vals)
