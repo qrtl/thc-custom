@@ -11,9 +11,9 @@ class StockLot(models.Model):
     def name_search(self, name="", args=None, operator="ilike", limit=100):
         if args is None:
             args = []
-        if "|" not in name:
+        if " " not in name:
             return super().name_search(name, args, operator, limit)
-        product_name, lot_name = name.split("|", 1)
+        lot_name, product_name = name.split(" ", 1)
         product = self.env["product.product"].search(
             [("name", "=", product_name)], limit=1
         )
