@@ -1,3 +1,1 @@
-This module enhances the import process for the lot field by checking
-both the product name and lot name. This approach helps prevent errors
-that occur when the same lot name exists across different products.
+This module updates the lot search functionality to handle cases where the value includes both the product name and the lot name together.
