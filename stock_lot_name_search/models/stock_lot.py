@@ -28,6 +28,4 @@ class StockLot(models.Model):
             ]
             args = expression.AND([lot_args, args])
             name = lot_name
-        return super(StockLot, self)._name_search(
-            name, args, operator, limit, name_get_uid
-        )
+        return super()._name_search(name, args, operator, limit, name_get_uid)

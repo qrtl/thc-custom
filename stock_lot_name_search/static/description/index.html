@@ -393,8 +393,13 @@ the value includes both the product name and the lot name together.</p>
 <div class="line"><strong>Search Format</strong>: Enter the lot name followed by a space, then the
 product name or default_code.</div>
 <div class="line"><strong>Examples</strong>: <tt class="docutils literal">Lot123 Product</tt> or <tt class="docutils literal">Lot123 Code</tt>.</div>
-<div class="line"><strong>Note</strong>: Ensure the lot name does not contain spaces.</div>
+<div class="line"><strong>Note</strong>:</div>
 </div>
+<ul class="simple">
+<li>User should always provide the lot name (otherwise the search result
+can get messed up when there is a space in the product name).</li>
+<li>The lot name should not include a space.</li>
+</ul>
 </div>
 <div class="section" id="bug-tracker">
 <h1><a class="toc-backref" href="#toc-entry-3">Bug Tracker</a></h1>
