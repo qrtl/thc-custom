@@ -2,21 +2,32 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 from odoo import api, models
+from odoo.osv import expression
 
 
 class StockLot(models.Model):
     _inherit = "stock.lot"
 
     @api.model
-    def name_search(self, name="", args=None, operator="ilike", limit=100):
-        if args is None:
-            args = []
-        if " " not in name:
-            return super().name_search(name, args, operator, limit)
-        lot_name, product_name = name.split(" ", 1)
-        product = self.env["product.product"].search(
-            [("name", "=", product_name)], limit=1
+    def _name_search(
+        self, name="", args=None, operator="ilike", limit=100, name_get_uid=None
+    ):
+        args = args or []
+        if " " in name:  # i.e., lot name and product name are provided
+            lot_name, product_name = name.split(" ", 1)
+            products = self.env["product.product"].search(
+                [
+                    "|",
+                    ("name", operator, product_name),
+                    ("default_code", operator, product_name),
+                ]
+            )
+            lot_args = [
+                ("product_id", "in", products.ids),
+                ("name", operator, lot_name),
+            ]
+            args = expression.AND([lot_args, args])
+            name = lot_name
+        return super(StockLot, self)._name_search(
+            name, args, operator, limit, name_get_uid
         )
-        args += [("product_id", "=", product.id), ("name", operator, lot_name)]
-        lot_ids = self._search(args, limit=limit)
-        return self.browse(lot_ids).name_get()

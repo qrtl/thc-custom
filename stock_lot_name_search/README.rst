@@ -30,6 +30,15 @@ the value includes both the product name and the lot name together.
 .. contents::
    :local:
 
+Usage
+=====
+
+Usage Guidelines for Enhanced Lot Search
+
+| **Search Format**: Enter the lot name followed by a space, then the
+  product name or code.
+| **Example**: ``Lot123 Product``
+
 Bug Tracker
 ===========
 
