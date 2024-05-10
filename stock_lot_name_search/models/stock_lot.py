@@ -22,10 +22,7 @@ class StockLot(models.Model):
                     ("default_code", operator, product_name),
                 ]
             )
-            lot_args = [
-                ("product_id", "in", products.ids),
-                ("name", operator, lot_name),
-            ]
+            lot_args = [("product_id", "in", products.ids)]
             args = expression.AND([lot_args, args])
             name = lot_name
         return super()._name_search(name, args, operator, limit, name_get_uid)
