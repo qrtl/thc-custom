@@ -1,4 +1,4 @@
-# Copyright 2024 Quartile Limited (https://www.quartile.co/)
+# Copyright 2024 Quartile (https://www.quartile.co)
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
 {
@@ -6,7 +6,7 @@
     "version": "16.0.1.0.0",
     "category": "Purchases",
     "license": "AGPL-3",
-    "author": "Quartile Limited",
+    "author": "Quartile",
     "website": "https://www.quartile.co",
     "depends": ["purchase"],
     "data": [
