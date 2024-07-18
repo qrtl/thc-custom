@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="purchase_order_line_tree_inherit" model="ir.ui.view">
+        <field name="name">purchase.order.line.tree.inherit</field>
+        <field name="model">purchase.order.line</field>
+        <field
+            name="inherit_id"
+            ref="purchase_order_line_menu.purchase_order_line_tree"
+        />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='product_qty']" position="after">
+                <field name="payment_term_id" optional="hide" />
+                <field name="expected_payment_date" optional="hide" />
+                <field name="price_subtotal_billed" optional="hide" />
+                <field name="price_subtotal_unbilled" optional="hide" />
+            </xpath>
+        </field>
+    </record>
+</odoo>
