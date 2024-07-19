@@ -10,10 +10,10 @@ class PurchaseOrderLine(models.Model):
     _inherit = "purchase.order.line"
 
     price_subtotal_billed = fields.Monetary(
-        compute="_compute_price_subtotal", store=True
+        compute="_compute_price_subtotal_billed", store=True
     )
     price_subtotal_unbilled = fields.Monetary(
-        compute="_compute_price_subtotal", store=True
+        compute="_compute_price_subtotal_billed", store=True
     )
     payment_term_id = fields.Many2one(related="order_id.payment_term_id", store=True)
     expected_payment_date = fields.Date(
@@ -21,19 +21,13 @@ class PurchaseOrderLine(models.Model):
     )
 
     @api.depends("price_unit", "qty_invoiced", "qty_to_invoice")
-    def _compute_price_subtotal(self):
+    def _compute_price_subtotal_billed(self):
         for line in self:
             if line.is_deposit:
-                sum_billed_amount_other_lines = sum(
-                    ol.price_unit * ol.qty_invoiced
-                    for ol in line.order_id.order_line
-                    if ol.id != line.id and not ol.is_deposit
-                )
                 line.price_subtotal_billed = line.price_unit
                 line.price_subtotal_unbilled = (
-                    sum_billed_amount_other_lines - line.price_unit
+                    sum(line.invoice_lines.mapped("balance")) * -1
                 )
-
                 continue
             line.price_subtotal_billed = line.price_unit * line.qty_invoiced
             line.price_subtotal_unbilled = line.price_unit * line.qty_to_invoice
