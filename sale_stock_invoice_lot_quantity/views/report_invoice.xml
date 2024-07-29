@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template
+        id="custom_stock_account_report_invoice_document"
+        inherit_id="stock_account.stock_account_report_invoice_document"
+        priority="100"
+    >
+        <xpath
+            expr="//table[@name='invoice_snln_table']//td[@class='text-end']/t[contains(@t-esc, 'quantity')]"
+            position="replace"
+        >
+            <span t-field="snln_line['lot_quantity'].quantity" />
+        </xpath>
+    </template>
+</odoo>
