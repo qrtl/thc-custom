@@ -8,11 +8,19 @@
             ref="purchase_order_line_menu.purchase_order_line_tree"
         />
         <field name="arch" type="xml">
-            <xpath expr="//field[@name='product_qty']" position="after">
-                <field name="payment_term_id" optional="hide" />
-                <field name="expected_payment_date" optional="hide" />
-                <field name="price_subtotal_billed" optional="hide" />
-                <field name="price_subtotal_unbilled" optional="hide" />
+            <xpath expr="//field[@name='date_order']" position="after">
+                <field name="payment_term_id" optional="show" />
+                <field name="expected_payment_date" optional="show" />
+                <field name="price_subtotal_billed" optional="show" />
+                <field name="price_subtotal_unbilled" optional="show" />
+                <field name='company_currency_id' invisible="1" />
+                <field
+                    name="price_subtotal_unbilled_curr"
+                    sum="Total"
+                    string="Total Subtotal Unbilled (Company Currency)"
+                    options="{'currency_field': 'company_currency_id'}"
+                    optional="show"
+                />
             </xpath>
         </field>
     </record>

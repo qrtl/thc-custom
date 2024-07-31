@@ -13,6 +13,12 @@
                 <field name="price_subtotal_unbilled" optional="hide" />
                 <field name="payment_term_id" optional="hide" />
                 <field name="expected_payment_date" optional="hide" />
+                <field name="company_currency_id" invisible="1" />
+                <field
+                    name="price_subtotal_unbilled_curr"
+                    options="{'currency_field': 'company_currency_id'}"
+                    optional="hide"
+                />
             </xpath>
         </field>
     </record>
