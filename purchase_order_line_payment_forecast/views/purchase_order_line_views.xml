@@ -11,13 +11,12 @@
             <xpath expr="//field[@name='date_order']" position="after">
                 <field name="payment_term_id" optional="show" />
                 <field name="expected_payment_date" optional="show" />
-                <field name="price_subtotal_billed" optional="show" />
-                <field name="price_subtotal_unbilled" optional="show" />
+                <field name="price_subtotal_billed" optional="hide" />
+                <field name="price_subtotal_unbilled" optional="hide" />
                 <field name='company_currency_id' invisible="1" />
                 <field
                     name="price_subtotal_unbilled_curr"
-                    sum="Total"
-                    string="Total Subtotal Unbilled (Company Currency)"
+                    sum="Total Unbilled Amount (Comp. Curr.)"
                     options="{'currency_field': 'company_currency_id'}"
                     optional="show"
                 />

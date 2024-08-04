@@ -1,9 +1,9 @@
 # Copyright 2024 Quartile (https://www.quartile.co)
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
-from dateutil.relativedelta import relativedelta
 
 from odoo import api, fields, models
+from odoo.tools import DEFAULT_SERVER_DATE_FORMAT as DF
 
 
 class PurchaseOrderLine(models.Model):
@@ -18,14 +18,13 @@ class PurchaseOrderLine(models.Model):
     )
     currency_rate = fields.Float(related="order_id.currency_rate")
     price_subtotal_billed = fields.Monetary(
-        compute="_compute_price_subtotal_billed", store=True
+        "Billed Amount", compute="_compute_price_subtotal_billed", store=True
     )
     price_subtotal_unbilled = fields.Monetary(
-        compute="_compute_price_subtotal_billed", store=True
+        "Unbilled Amount", compute="_compute_price_subtotal_billed", store=True
     )
     price_subtotal_unbilled_curr = fields.Monetary(
-        readonly=True,
-        help="Price Subtotal Unbilled Amount in the company Currency",
+        "Unbilled Amount (Comp. Curr.)",
         compute="_compute_price_subtotal_unbilled_curr",
         currency_field="company_currency_id",
         store=True,
@@ -47,7 +46,9 @@ class PurchaseOrderLine(models.Model):
                 line.price_subtotal_unbilled = line.price_subtotal_billed * -1
                 continue
             line.price_subtotal_billed = line.price_unit * line.qty_invoiced
-            line.price_subtotal_unbilled = line.price_unit * line.qty_to_invoice
+            line.price_subtotal_unbilled = line.price_unit * (
+                line.product_qty - line.qty_invoiced
+            )
 
     @api.depends("price_subtotal_unbilled", "currency_rate")
     def _compute_price_subtotal_unbilled_curr(self):
@@ -61,16 +62,14 @@ class PurchaseOrderLine(models.Model):
     @api.depends("date_planned", "payment_term_id")
     def _compute_expected_payment_date(self):
         for line in self:
-            if line.date_planned and line.payment_term_id:
-                date = fields.Date.context_today(self, line.date_planned)
-                payment_term_line = line.payment_term_id.line_ids[0]
-                date += relativedelta(
-                    months=payment_term_line.months, days=payment_term_line.days
-                )
-                if payment_term_line.end_month:
-                    start_next_month = date + relativedelta(day=1, months=1)
-                    date = start_next_month - relativedelta(days=1)
-                date += relativedelta(days=payment_term_line.days_after)
-                line.expected_payment_date = date
-            else:
+            if line.display_type is not False or not line.payment_term_id:
                 line.expected_payment_date = False
+                continue
+            date_planned = fields.Date.context_today(self, line.date_planned)
+            ref_date = date_planned.strftime(DF)
+            pay_date = False
+            # We pick the earliest payment date if the term proposes multiple dates.
+            for term_line in line.payment_term_id.line_ids:
+                due_date = term_line._get_due_date(ref_date)
+                pay_date = due_date if not pay_date else min(pay_date, due_date)
+            line.expected_payment_date = pay_date
