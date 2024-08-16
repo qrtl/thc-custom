@@ -23,9 +23,6 @@
             position="attributes"
         >
             <attribute name="style">display: none;</attribute>
-            <span
-                t-field="aggregated_lines[line]['aggregated_move_quantity'].qty_done"
-            />
         </xpath>
         <xpath
             expr="//td[@name='move_line_aggregated_qty_done']/t/span[contains(@t-esc, 'qty_done')]"
