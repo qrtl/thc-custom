@@ -6,6 +6,7 @@
         priority="100"
     >
         <xpath expr="//t[contains(@t-esc, 'quantity')]" position="replace">
+            <!-- Call _format_quantity instead of using <span t-field=""> to avoid misalignment caused by the different behaviors of the t tag and span tag. -->
             <t t-esc="snln_line['lot_quantity']._format_quantity()" />
         </xpath>
     </template>
