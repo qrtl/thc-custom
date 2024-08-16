@@ -8,7 +8,7 @@
     "license": "AGPL-3",
     "author": "Quartile",
     "website": "https://www.quartile.co",
-    "depends": ["sale_stock"],
+    "depends": ["sale_stock", "report_qweb_decimal_precision"],
     "data": [
         "security/ir.model.access.csv",
         "views/report_invoice.xml",

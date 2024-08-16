@@ -6,7 +6,7 @@
         priority="100"
     >
         <xpath expr="//t[contains(@t-esc, 'quantity')]" position="replace">
-            <span t-field="snln_line['lot_quantity'].quantity" />
+            <t t-esc="snln_line['lot_quantity']._format_quantity()" />
         </xpath>
     </template>
 </odoo>
