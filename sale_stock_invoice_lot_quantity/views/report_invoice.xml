@@ -3,25 +3,32 @@
     <template
         id="custom_stock_account_report_invoice_document"
         inherit_id="stock_account.stock_account_report_invoice_document"
-        priority="100"
     >
-        <xpath expr="//t[contains(@t-esc, 'product_name')]" position="replace">
-            <span>
-                <t t-esc="snln_line['product_name']" />
-            </span>
+        <xpath
+            expr="//table[@name='invoice_snln_table']/tbody/t/tr"
+            position="attributes"
+        >
+            <attribute name="style">display:none;</attribute>
         </xpath>
-        <xpath expr="//t[contains(@t-esc, 'quantity')]" position="replace">
-            <span t-field="snln_line['lot_quantity'].quantity" />
-        </xpath>
-        <xpath expr="//t[contains(@t-esc, 'uom_name')]" position="replace">
-            <span>
-                <t t-esc="snln_line['uom_name']" groups="uom.group_uom" />
-            </span>
-        </xpath>
-        <xpath expr="//t[contains(@t-esc, 'lot_name')]" position="replace">
-            <span>
-                <t t-esc="snln_line['lot_name']" />
-            </span>
+        <xpath expr="//table[@name='invoice_snln_table']/tbody/t/tr" position="before">
+            <tr>
+                <td>
+                    <span>
+                        <t t-esc="snln_line['product_name']" />
+                    </span>
+                </td>
+                <td class="text-end">
+                    <span t-field="snln_line['lot_quantity'].quantity" />
+                    <span>
+                        <t t-esc="snln_line['uom_name']" groups="uom.group_uom" />
+                    </span>
+                </td>
+                <td class="text-end">
+                    <span>
+                        <t t-esc="snln_line['lot_name']" />
+                    </span>
+                </td>
+            </tr>
         </xpath>
     </template>
 </odoo>
