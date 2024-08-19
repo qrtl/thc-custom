@@ -5,9 +5,23 @@
         inherit_id="stock_account.stock_account_report_invoice_document"
         priority="100"
     >
+        <xpath expr="//t[contains(@t-esc, 'product_name')]" position="replace">
+            <span>
+                <t t-esc="snln_line['product_name']" />
+            </span>
+        </xpath>
         <xpath expr="//t[contains(@t-esc, 'quantity')]" position="replace">
-            <!-- Call _format_quantity instead of using <span t-field=""> to avoid misalignment caused by the different behaviors of the t tag and span tag. -->
-            <t t-esc="snln_line['lot_quantity']._format_quantity()" />
+            <span t-field="snln_line['lot_quantity'].quantity" />
+        </xpath>
+        <xpath expr="//t[contains(@t-esc, 'uom_name')]" position="replace">
+            <span>
+                <t t-esc="snln_line['uom_name']" groups="uom.group_uom" />
+            </span>
+        </xpath>
+        <xpath expr="//t[contains(@t-esc, 'lot_name')]" position="replace">
+            <span>
+                <t t-esc="snln_line['lot_name']" />
+            </span>
         </xpath>
     </template>
 </odoo>
