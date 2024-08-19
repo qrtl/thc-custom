@@ -8,6 +8,10 @@
             expr="//table[@name='invoice_snln_table']/tbody/t/tr"
             position="attributes"
         >
+            <!--
+                Hide the original <tr> to replace it with a new <tr> where all fields are wrapped in <span> tags.
+                This ensures proper alignment and avoids misalignment issues when using <span> and <t> tags together.
+            -->
             <attribute name="style">display:none;</attribute>
         </xpath>
         <xpath expr="//table[@name='invoice_snln_table']/tbody/t/tr" position="before">
