@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template
+        id="stock_report_delivery_aggregated_move_lines_inherit"
+        inherit_id="stock.stock_report_delivery_aggregated_move_lines"
+    >
+        <xpath
+            expr="//td[@name='move_line_aggregated_qty_ordered']/span[contains(@t-esc, 'qty_ordered')]"
+            position="attributes"
+        >
+            <attribute name="style">display: none;</attribute>
+        </xpath>
+        <xpath
+            expr="//td[@name='move_line_aggregated_qty_ordered']/span[contains(@t-esc, 'qty_ordered')]"
+            position="after"
+        >
+            <span
+                t-field="aggregated_lines[line]['aggregated_move_quantity'].qty_ordered"
+            />
+        </xpath>
+        <xpath
+            expr="//td[@name='move_line_aggregated_qty_done']/t/span[contains(@t-esc, 'qty_done')]"
+            position="attributes"
+        >
+            <attribute name="style">display: none;</attribute>
+        </xpath>
+        <xpath
+            expr="//td[@name='move_line_aggregated_qty_done']/t/span[contains(@t-esc, 'qty_done')]"
+            position="after"
+        >
+            <span
+                t-field="aggregated_lines[line]['aggregated_move_quantity'].qty_done"
+            />
+        </xpath>
+    </template>
+</odoo>
