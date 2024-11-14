@@ -59,17 +59,19 @@ class PurchaseOrderLine(models.Model):
                 unbilled_amount_curr = line.price_subtotal_unbilled / line.currency_rate
             line.price_subtotal_unbilled_curr = unbilled_amount_curr
 
-    @api.depends("date_planned", "payment_term_id")
+    # Use "order_id.payment_term_id" as a dependency because "payment_term_id"
+    # is not set before this computation when the module is installed, as it's a related field.
+    @api.depends("date_planned", "order_id.payment_term_id")
     def _compute_expected_payment_date(self):
         for line in self:
-            if line.display_type is not False or not line.payment_term_id:
+            if line.display_type is not False or not line.order_id.payment_term_id:
                 line.expected_payment_date = False
                 continue
             date_planned = fields.Date.context_today(self, line.date_planned)
             ref_date = date_planned.strftime(DF)
             pay_date = False
             # We pick the earliest payment date if the term proposes multiple dates.
-            for term_line in line.payment_term_id.line_ids:
+            for term_line in line.order_id.payment_term_id.line_ids:
                 due_date = term_line._get_due_date(ref_date)
                 pay_date = due_date if not pay_date else min(pay_date, due_date)
             line.expected_payment_date = pay_date
