@@ -4,6 +4,9 @@
 from odoo.tools.sql import column_exists
 
 
+# This hook ensures that the 'payment_term_id' is initialized before the
+# '_compute_expected_payment_date' method is called, allowing it to correctly
+# calculate 'expected_payment_date' when the module is installed.
 def pre_init_hook(cr):
     if not column_exists(cr, "purchase_order_line", "payment_term_id"):
         cr.execute(
