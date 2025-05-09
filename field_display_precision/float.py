@@ -2,7 +2,7 @@ from odoo import fields
 
 
 def custom_get_digits(self, env):
-    precision = 0
+    precision = None
     float_decimal_rec = env["field.display.precision"].search(
         [
             ("model_name", "=", self.model_name),
@@ -23,11 +23,15 @@ def custom_get_digits(self, env):
     if float_decimal_rec:
         precision = float_decimal_rec.digits
     if isinstance(self._digits, str):
-        if precision:
+        if precision is not None:
             return 16, precision
         precision = env["decimal.precision"].precision_get(self._digits)
         return 16, precision
-    elif isinstance(self._digits, tuple) and len(self._digits) == 2 and precision:
+    elif (
+        isinstance(self._digits, tuple)
+        and len(self._digits) == 2
+        and precision is not None
+    ):
         return self._digits[0], precision
     else:
         return self._digits
