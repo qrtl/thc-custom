@@ -42,6 +42,19 @@ determined by the Decimal Accuracy setting and is shared across all
 models. However, in some cases, users may want to define different
 decimal precision values for specific models.
 
+Configuration
+=============
+
+Go to *Settings > Technical > User Interface > Field Display Precision*,
+and create records according to your needs.
+
+For each record:
+
+-  Set **Model** and **Field** (required)
+-  Set Company (optional)
+-  Set **Digits**. Defines the number of decimal places to be used for
+   the specified model and field.
+
 Known issues / Roadmap
 ======================
 
