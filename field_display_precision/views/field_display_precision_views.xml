@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="view_field_display_precision_tree" model="ir.ui.view">
+        <field name="name">field.display.precision.tree</field>
+        <field name="model">field.display.precision</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree create="1" editable="bottom">
+                <field name="model_id" />
+                <field name="field_id" attrs="{'readonly':[('model_id','=',False)]}" />
+                <field
+                    name="company_id"
+                    groups="base.group_multi_company"
+                    optional="show"
+                />
+                <field name="digits" />
+            </tree>
+        </field>
+    </record>
+    <record id="view_field_display_precision_search" model="ir.ui.view">
+        <field name="name">field.display.precision.search</field>
+        <field name="model">field.display.precision</field>
+        <field name="arch" type="xml">
+            <search string="Field Float Decimal Search">
+                <field name="model_id" />
+                <field name="field_id" />
+                <separator />
+                <group expand="1" string="Group By">
+                    <filter
+                        string="Model"
+                        name="model_id"
+                        context="{'group_by': 'model_id'}"
+                    />
+                </group>
+            </search>
+        </field>
+    </record>
+    <record id="action_field_display_precision_view" model="ir.actions.act_window">
+        <field name="name">Field Display Precision</field>
+        <field name="res_model">field.display.precision</field>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="view_field_display_precision_tree" />
+    </record>
+    <menuitem
+        id="menu_field_display_precision"
+        parent="base.next_id_2"
+        action="action_field_display_precision_view"
+        sequence="10"
+    />
+</odoo>
