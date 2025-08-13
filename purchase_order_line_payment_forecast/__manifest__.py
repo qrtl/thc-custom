@@ -8,7 +8,7 @@
     "license": "AGPL-3",
     "author": "Quartile",
     "website": "https://www.quartile.co",
-    "depends": ["purchase_deposit", "purchase_order_line_menu"],
+    "depends": ["purchase_order_line_menu"],
     "data": [
         "views/purchase_order_views.xml",
         "views/purchase_order_line_views.xml",
