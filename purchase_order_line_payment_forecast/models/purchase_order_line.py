@@ -37,14 +37,6 @@ class PurchaseOrderLine(models.Model):
     @api.depends("price_unit", "qty_invoiced", "qty_to_invoice")
     def _compute_price_subtotal_billed(self):
         for line in self:
-            if line.is_deposit:
-                line.price_subtotal_billed = sum(
-                    line.invoice_lines.filtered(
-                        lambda l: l.move_id.state != "cancel"
-                    ).mapped("balance")
-                )
-                line.price_subtotal_unbilled = line.price_subtotal_billed * -1
-                continue
             line.price_subtotal_billed = line.price_unit * line.qty_invoiced
             line.price_subtotal_unbilled = line.price_unit * (
                 line.product_qty - line.qty_invoiced
