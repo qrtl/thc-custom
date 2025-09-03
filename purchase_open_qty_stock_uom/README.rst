@@ -22,7 +22,7 @@ Purchase Open Qty Stock Uom
 
 |badge1| |badge2| |badge3|
 
-This module adds "Qty to Receive (stock UoM)" field to
+This module adds "Qty to Receive (Stock UoM)" field to
 purchase.order.line.
 
 **Table of contents**
@@ -46,7 +46,7 @@ Credits
 Authors
 -------
 
-* Toshikimi Shigenobu
+* Quartile
 
 Maintainers
 -----------

@@ -18,7 +18,7 @@
         <field name="model">purchase.order.line</field>
         <field
             name="inherit_id"
-            ref="purchase_order_line_menu.purchase_order_line_tree"
+            ref="purchase_open_qty.view_purchase_order_line_tree"
         />
         <field name="arch" type="xml">
             <field name="qty_to_receive" position="after">
