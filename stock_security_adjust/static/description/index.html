@@ -8,10 +8,11 @@
 
 /*
 :Author: David Goodger (goodger@python.org)
-:Id: $Id: html4css1.css 8954 2022-01-20 10:10:25Z milde $
+:Id: $Id: html4css1.css 9511 2024-01-13 09:50:07Z milde $
 :Copyright: This stylesheet has been placed in the public domain.
 
 Default cascading style sheet for the HTML output of Docutils.
+Despite the name, some widely supported CSS2 features are used.
 
 See https://docutils.sourceforge.io/docs/howto/html-stylesheets.html for how to
 customize this style sheet.
@@ -274,7 +275,7 @@ pre.literal-block, pre.doctest-block, pre.math, pre.code {
   margin-left: 2em ;
   margin-right: 2em }
 
-pre.code .ln { color: grey; } /* line numbers */
+pre.code .ln { color: gray; } /* line numbers */
 pre.code, code { background-color: #eeeeee }
 pre.code .comment, code .comment { color: #5C6576 }
 pre.code .keyword, code .keyword { color: #3B0D06; font-weight: bold }
@@ -300,7 +301,7 @@ span.option {
 span.pre {
   white-space: pre }
 
-span.problematic {
+span.problematic, pre.problematic {
   color: red }
 
 span.section-subtitle {
@@ -368,14 +369,14 @@ ul.auto-toc {
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !! source digest: sha256:6b9e16cd800665fe60bcd6900a6fb740364f78c0320ac98e9db46a1cf2bdfd8d
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
-<p><a class="reference external image-reference" href="https://odoo-community.org/page/development-status"><img alt="Beta" src="https://img.shields.io/badge/maturity-Beta-yellow.png" /></a> <a class="reference external image-reference" href="http://www.gnu.org/licenses/lgpl-3.0-standalone.html"><img alt="License: LGPL-3" src="https://img.shields.io/badge/licence-LGPL--3-blue.png" /></a> <a class="reference external image-reference" href="https://github.com/qrtl/thc-custom/tree/16.0/stock_security_adjust"><img alt="qrtl/thc-custom" src="https://img.shields.io/badge/github-qrtl%2Fthc--custom-lightgray.png?logo=github" /></a></p>
+<p><a class="reference external image-reference" href="https://odoo-community.org/page/development-status"><img alt="Beta" src="https://img.shields.io/badge/maturity-Beta-yellow.png" /></a> <a class="reference external image-reference" href="http://www.gnu.org/licenses/lgpl-3.0-standalone.html"><img alt="License: LGPL-3" src="https://img.shields.io/badge/license-LGPL--3-blue.png" /></a> <a class="reference external image-reference" href="https://github.com/qrtl/thc-custom/tree/16.0/stock_security_adjust"><img alt="qrtl/thc-custom" src="https://img.shields.io/badge/github-qrtl%2Fthc--custom-lightgray.png?logo=github" /></a></p>
 <p>This module makes adjustments to security settings of stock-related
 functions.</p>
 <ul class="simple">
 <li>Adds ‘Inventory / Officer’ group in between ‘Inventory / User’ and
 ‘Inventory / Manager’.</li>
-<li>Gives ‘Inventory / Officer’ access to the <em>Inventory &gt; Reporting</em>
-menu node.</li>
+<li>Gives ‘Inventory / Officer’ access to the <em>Inventory &gt; Reporting</em> menu
+node.</li>
 <li>Makes some fields and buttons of Inventory Adjustments list view
 invisible, as well as hiding the menu item for users without
 Inventory/Administrator group.</li>

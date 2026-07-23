@@ -13,7 +13,7 @@ Stock Security Adjust
 .. |badge1| image:: https://img.shields.io/badge/maturity-Beta-yellow.png
     :target: https://odoo-community.org/page/development-status
     :alt: Beta
-.. |badge2| image:: https://img.shields.io/badge/licence-LGPL--3-blue.png
+.. |badge2| image:: https://img.shields.io/badge/license-LGPL--3-blue.png
     :target: http://www.gnu.org/licenses/lgpl-3.0-standalone.html
     :alt: License: LGPL-3
 .. |badge3| image:: https://img.shields.io/badge/github-qrtl%2Fthc--custom-lightgray.png?logo=github
@@ -25,15 +25,15 @@ Stock Security Adjust
 This module makes adjustments to security settings of stock-related
 functions.
 
--  Adds 'Inventory / Officer' group in between 'Inventory / User' and
-   'Inventory / Manager'.
--  Gives 'Inventory / Officer' access to the *Inventory > Reporting*
-   menu node.
--  Makes some fields and buttons of Inventory Adjustments list view
-   invisible, as well as hiding the menu item for users without
-   Inventory/Administrator group.
--  Grants the 'Inventory / Officer' group access to the 'value' field on
-   stock quants.
+- Adds 'Inventory / Officer' group in between 'Inventory / User' and
+  'Inventory / Manager'.
+- Gives 'Inventory / Officer' access to the *Inventory > Reporting* menu
+  node.
+- Makes some fields and buttons of Inventory Adjustments list view
+  invisible, as well as hiding the menu item for users without
+  Inventory/Administrator group.
+- Grants the 'Inventory / Officer' group access to the 'value' field on
+  stock quants.
 
 **Table of contents**
 
