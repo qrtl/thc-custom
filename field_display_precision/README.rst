@@ -13,7 +13,7 @@ Field Display Precision
 .. |badge1| image:: https://img.shields.io/badge/maturity-Beta-yellow.png
     :target: https://odoo-community.org/page/development-status
     :alt: Beta
-.. |badge2| image:: https://img.shields.io/badge/licence-AGPL--3-blue.png
+.. |badge2| image:: https://img.shields.io/badge/license-AGPL--3-blue.png
     :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
     :alt: License: AGPL-3
 .. |badge3| image:: https://img.shields.io/badge/github-qrtl%2Fthc--custom-lightgray.png?logo=github
@@ -50,10 +50,10 @@ and create records according to your needs.
 
 For each record:
 
--  Set **Model** and **Field** (required)
--  Set Company (optional)
--  Set **Digits**. Defines the number of decimal places to be used for
-   the specified model and field.
+- Set **Model** and **Field** (required)
+- Set Company (optional)
+- Set **Digits**. Defines the number of decimal places to be used for
+  the specified model and field.
 
 Known issues / Roadmap
 ======================
@@ -84,9 +84,9 @@ Authors
 Contributors
 ------------
 
--  `Quartile <https://www.quartile.co>`__:
+- `Quartile <https://www.quartile.co>`__:
 
-   -  Aung Ko Ko Lin
+  - Aung Ko Ko Lin
 
 Maintainers
 -----------

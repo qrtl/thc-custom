@@ -13,7 +13,7 @@ Partner Group Partner Admin
 .. |badge1| image:: https://img.shields.io/badge/maturity-Beta-yellow.png
     :target: https://odoo-community.org/page/development-status
     :alt: Beta
-.. |badge2| image:: https://img.shields.io/badge/licence-AGPL--3-blue.png
+.. |badge2| image:: https://img.shields.io/badge/license-AGPL--3-blue.png
     :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
     :alt: License: AGPL-3
 .. |badge3| image:: https://img.shields.io/badge/github-qrtl%2Fthc--custom-lightgray.png?logo=github
@@ -24,8 +24,8 @@ Partner Group Partner Admin
 
 This module adds the partner administrator group to do the following:
 
--  Limits the creation and edition of commercial partners to the partner
-   administrator.
+- Limits the creation and edition of commercial partners to the partner
+  administrator.
 
 **Table of contents**
 
