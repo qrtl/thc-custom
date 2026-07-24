@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="stock_lot_view_form" model="ir.ui.view">
+        <field name="name">stock.lot.form.top.parent</field>
+        <field name="model">stock.lot</field>
+        <field name="inherit_id" ref="stock.view_production_lot_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='main_group']" position="after">
+                <group name="top_parent" string="Top Level Parent">
+                    <field name="top_parent_lot_id" domain="[('id', '!=', id)]" />
+                    <field name="top_parent_product_id" />
+                    <field name="top_parent_location_ids" widget="many2many_tags" />
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>

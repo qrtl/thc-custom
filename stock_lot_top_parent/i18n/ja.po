@@ -1,0 +1,53 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* stock_lot_top_parent
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-24 02:47+0000\n"
+"PO-Revision-Date: 2026-07-24 02:47+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: stock_lot_top_parent
+#: model:ir.model.fields,help:stock_lot_top_parent.field_stock_lot__top_parent_location_ids
+msgid ""
+"Current internal locations of Top lv Parent S/N, or of this lot itself when "
+"it has no parent. Empty when it is not stored in any internal location."
+msgstr "トップレベル親 S/N（親がない場合はこのロット自身）の現在の内部ロケーション。いずれの内部ロケーションにも保管されていない場合は空欄。"
+
+#. module: stock_lot_top_parent
+#: model:ir.model,name:stock_lot_top_parent.model_stock_lot
+msgid "Lot/Serial"
+msgstr "ロット/シリアル"
+
+#. module: stock_lot_top_parent
+#: model:ir.model.fields,field_description:stock_lot_top_parent.field_stock_lot__top_parent_location_ids
+msgid "Physical Location"
+msgstr "物理ロケーション"
+
+#. module: stock_lot_top_parent
+#: model:ir.model.fields,help:stock_lot_top_parent.field_stock_lot__top_parent_lot_id
+msgid "Serial number of the top-level parent assembly this lot belongs to."
+msgstr "このロットが属するトップレベル親アセンブリのシリアル番号。"
+
+#. module: stock_lot_top_parent
+#: model_terms:ir.ui.view,arch_db:stock_lot_top_parent.stock_lot_view_form
+msgid "Top Level Parent"
+msgstr "トップレベル親"
+
+#. module: stock_lot_top_parent
+#: model:ir.model.fields,field_description:stock_lot_top_parent.field_stock_lot__top_parent_product_id
+msgid "Top lv Parent P/N"
+msgstr "トップレベル親 P/N"
+
+#. module: stock_lot_top_parent
+#: model:ir.model.fields,field_description:stock_lot_top_parent.field_stock_lot__top_parent_lot_id
+msgid "Top lv Parent S/N"
+msgstr "トップレベル親 S/N"
