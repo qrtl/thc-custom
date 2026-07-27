@@ -12,7 +12,10 @@
                 <field name="allow_purchase" />
                 <field name="successor_product_id" domain="[('id', '!=', id)]" />
             </xpath>
-            <xpath expr="//page[@name='purchase']" position="inside">
+            <xpath
+                expr="//page[@name='purchase']/group[@name='purchase']"
+                position="after"
+            >
                 <group name="manufacturer" string="Manufacturer">
                     <field name="manufacturer_id" />
                     <field name="manufacturer_pname" />

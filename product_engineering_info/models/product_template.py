@@ -23,7 +23,6 @@ class ProductTemplate(models.Model):
     )
     manufacturer_pname = fields.Char(string="Manufacturer Product Name")
     manufacturer_pcode = fields.Char(string="Manufacturer Product Code")
-
     registered_by = fields.Char(help="Person who first registered the part number.")
     group_code_id = fields.Many2one(
         "product.group.code",
