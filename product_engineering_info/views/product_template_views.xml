@@ -23,11 +23,16 @@
                 <page string="Engineering" name="engineering">
                     <group>
                         <group name="engineering_left">
-                            <field name="registered_by" />
                             <field name="group_code_id" />
+                            <field
+                                name="compatible_product_ids"
+                                widget="many2many_tags"
+                                domain="[('id', '!=', id)]"
+                            />
                             <field name="engineering_folder_link" widget="url" />
                         </group>
                         <group name="engineering_right">
+                            <field name="registered_by" />
                             <field name="legacy_number_cad" />
                             <field name="legacy_description_cad" />
                         </group>
@@ -44,13 +49,6 @@
                             <field name="bom_approver" />
                             <field name="bom_approval_date" />
                         </group>
-                    </group>
-                    <group>
-                        <field
-                            name="compatible_product_ids"
-                            widget="many2many_tags"
-                            domain="[('id', '!=', id)]"
-                        />
                     </group>
                     <group string="Technical Notes">
                         <field name="technical_notes" nolabel="1" colspan="2" />

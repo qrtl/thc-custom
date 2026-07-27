@@ -17,7 +17,6 @@ class ProductTemplate(models.Model):
         string="Successor P/N",
         help="Part that supersedes this one.",
     )
-
     manufacturer_id = fields.Many2one(
         "res.partner",
         help="Actual manufacturer of the part (may differ from the vendor).",
