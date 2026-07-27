@@ -1,7 +1,7 @@
 This module extends products with engineering-oriented information:
 
 - An **Engineering** tab on the product form gathering the following fields:
-  - **Active Flag**: whether the part is still to be ordered (an
+  - **Allow Purchase**: whether the part is still to be ordered (an
     engineering view; distinct from Odoo's archive flag).
   - **Product Group Code**: a design classification (e.g. sheet metal,
     circuit board), managed under *Inventory > Configuration > Products*.

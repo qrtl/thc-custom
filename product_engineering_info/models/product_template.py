@@ -7,7 +7,6 @@ from odoo import fields, models
 class ProductTemplate(models.Model):
     _inherit = "product.template"
 
-    # General Information tab
     allow_purchase = fields.Boolean(
         default=True,
         help="Whether the part may still be purchased. Unlike archiving, the "
@@ -19,7 +18,6 @@ class ProductTemplate(models.Model):
         help="Part that supersedes this one.",
     )
 
-    # Purchase tab
     manufacturer_id = fields.Many2one(
         "res.partner",
         help="Actual manufacturer of the part (may differ from the vendor).",
@@ -27,7 +25,6 @@ class ProductTemplate(models.Model):
     manufacturer_pname = fields.Char(string="Manufacturer Product Name")
     manufacturer_pcode = fields.Char(string="Manufacturer Product Code")
 
-    # Engineering tab
     registered_by = fields.Char(help="Person who first registered the part number.")
     group_code_id = fields.Many2one(
         "product.group.code",
