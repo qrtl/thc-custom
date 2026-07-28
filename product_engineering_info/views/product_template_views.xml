@@ -10,7 +10,7 @@
                 position="inside"
             >
                 <field name="allow_purchase" />
-                <field name="successor_product_id" domain="[('id', '!=', id)]" />
+                <field name="successor_product_id" />
             </xpath>
             <xpath
                 expr="//page[@name='purchase']/group[@name='purchase']"
@@ -30,12 +30,11 @@
                             <field
                                 name="compatible_product_ids"
                                 widget="many2many_tags"
-                                domain="[('id', '!=', id)]"
                             />
                             <field name="engineering_folder_link" widget="url" />
                         </group>
                         <group name="engineering_right">
-                            <field name="registered_by" />
+                            <field name="registered_by_id" />
                             <field name="legacy_number_cad" />
                             <field name="legacy_description_cad" />
                         </group>
@@ -48,8 +47,8 @@
                             <field name="bom_status" />
                         </group>
                         <group name="ebom_right">
-                            <field name="bom_author" />
-                            <field name="bom_approver" />
+                            <field name="bom_author_id" />
+                            <field name="bom_approver_id" />
                             <field name="bom_approval_date" />
                         </group>
                     </group>
