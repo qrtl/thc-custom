@@ -75,6 +75,7 @@ class ProductTemplate(models.Model):
         column2="compatible_product_tmpl_id",
         string="Compatible P/N",
         help="Parts that may be used as substitutes when out of stock.",
+        copy=False,
     )
     legacy_number_cad = fields.Char(string="Legacy Number (CAD)")
     legacy_description_cad = fields.Char(string="Legacy Description (CAD)")
