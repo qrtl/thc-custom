@@ -1,0 +1,314 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* product_engineering_info
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-24 01:35+0000\n"
+"PO-Revision-Date: 2026-07-24 01:35+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: product_engineering_info
+#. odoo-python
+#: code:addons/product_engineering_info/models/product_template.py:0
+#, python-format
+msgid "A product cannot be in its own compatible products (%s)."
+msgstr "プロダクトを自身の互換プロダクトに含めることはできません（%s）。"
+
+#. module: product_engineering_info
+#. odoo-python
+#: code:addons/product_engineering_info/models/product_template.py:0
+#, python-format
+msgid "A product cannot be its own successor (%s)."
+msgstr "プロダクトを自身の後継に設定することはできません（%s）。"
+
+#. module: product_engineering_info
+#: model:ir.model.fields,field_description:product_engineering_info.field_product_group_code__active
+msgid "Active"
+msgstr "有効"
+
+#. module: product_engineering_info
+#: model:ir.model.fields,help:product_engineering_info.field_product_product__manufacturer_id
+#: model:ir.model.fields,help:product_engineering_info.field_product_template__manufacturer_id
+msgid "Actual manufacturer of the part (may differ from the vendor)."
+msgstr "部品の実際の製造者（仕入先と異なる場合があります）。"
+
+#. module: product_engineering_info
+#: model:ir.model.fields,field_description:product_engineering_info.field_product_product__allow_purchase
+#: model:ir.model.fields,field_description:product_engineering_info.field_product_template__allow_purchase
+msgid "Allow Purchase"
+msgstr "購買許可"
+
+#. module: product_engineering_info
+#: model_terms:ir.ui.view,arch_db:product_engineering_info.product_group_code_view_form
+#: model_terms:ir.ui.view,arch_db:product_engineering_info.product_group_code_view_search
+msgid "Archived"
+msgstr "アーカイブ済"
+
+#. module: product_engineering_info
+#: model:ir.model.fields.selection,name:product_engineering_info.selection__product_template__bom_status__approved
+msgid "Approved"
+msgstr "承認済み・未発効"
+
+#. module: product_engineering_info
+#: model:ir.model.fields,field_description:product_engineering_info.field_product_product__bom_approval_date
+#: model:ir.model.fields,field_description:product_engineering_info.field_product_template__bom_approval_date
+msgid "BOM Approval Date"
+msgstr "BOM承認日"
+
+#. module: product_engineering_info
+#: model:ir.model.fields,field_description:product_engineering_info.field_product_product__bom_approver_id
+#: model:ir.model.fields,field_description:product_engineering_info.field_product_template__bom_approver_id
+msgid "BOM Approver"
+msgstr "BOM承認者"
+
+#. module: product_engineering_info
+#: model:ir.model.fields,field_description:product_engineering_info.field_product_product__bom_author_id
+#: model:ir.model.fields,field_description:product_engineering_info.field_product_template__bom_author_id
+msgid "BOM Author"
+msgstr "BOM作成者"
+
+#. module: product_engineering_info
+#: model:ir.model.fields,field_description:product_engineering_info.field_product_product__bom_link_released
+#: model:ir.model.fields,field_description:product_engineering_info.field_product_template__bom_link_released
+msgid "BOM Link (Released)"
+msgstr "BOMリンク（リリース済み）"
+
+#. module: product_engineering_info
+#: model:ir.model.fields,field_description:product_engineering_info.field_product_product__bom_link
+#: model:ir.model.fields,field_description:product_engineering_info.field_product_template__bom_link
+msgid "BOM Link (Working)"
+msgstr "BOMリンク（作業中）"
+
+#. module: product_engineering_info
+#: model:ir.model.fields,field_description:product_engineering_info.field_product_product__bom_revision
+#: model:ir.model.fields,field_description:product_engineering_info.field_product_template__bom_revision
+msgid "BOM Revision"
+msgstr "BOMリビジョン"
+
+#. module: product_engineering_info
+#: model:ir.model.fields,field_description:product_engineering_info.field_product_product__bom_status
+#: model:ir.model.fields,field_description:product_engineering_info.field_product_template__bom_status
+msgid "BOM Status"
+msgstr "BOMステータス"
+
+#. module: product_engineering_info
+#: model:ir.model.fields.selection,name:product_engineering_info.selection__product_template__bom_status__canceled
+msgid "Canceled"
+msgstr "取り下げ・キャンセル"
+
+#. module: product_engineering_info
+#: model:ir.model.fields,field_description:product_engineering_info.field_product_product__compatible_product_ids
+#: model:ir.model.fields,field_description:product_engineering_info.field_product_template__compatible_product_ids
+msgid "Compatible P/N"
+msgstr "互換 P/N"
+
+#. module: product_engineering_info
+#: model:ir.model.fields,field_description:product_engineering_info.field_product_group_code__create_uid
+msgid "Created by"
+msgstr "作成者"
+
+#. module: product_engineering_info
+#: model:ir.model.fields,field_description:product_engineering_info.field_product_group_code__create_date
+msgid "Created on"
+msgstr "作成日"
+
+#. module: product_engineering_info
+#: model:ir.model.fields,field_description:product_engineering_info.field_product_group_code__display_name
+msgid "Display Name"
+msgstr "表示名"
+
+#. module: product_engineering_info
+#: model:ir.model.fields.selection,name:product_engineering_info.selection__product_template__bom_status__draft
+msgid "Draft"
+msgstr "作成・改訂中"
+
+#. module: product_engineering_info
+#: model_terms:ir.ui.view,arch_db:product_engineering_info.product_template_view_form
+msgid "E-BOM"
+msgstr "E-BOM"
+
+#. module: product_engineering_info
+#: model_terms:ir.ui.view,arch_db:product_engineering_info.product_template_view_form
+msgid "Engineering"
+msgstr "エンジニアリング"
+
+#. module: product_engineering_info
+#: model:ir.model.fields,field_description:product_engineering_info.field_product_product__engineering_folder_link
+#: model:ir.model.fields,field_description:product_engineering_info.field_product_template__engineering_folder_link
+msgid "Engineering Folder Link"
+msgstr "エンジニアリングフォルダリンク"
+
+#. module: product_engineering_info
+#: model:ir.model.fields,field_description:product_engineering_info.field_product_group_code__id
+msgid "ID"
+msgstr "ID"
+
+#. module: product_engineering_info
+#: model:ir.model.fields.selection,name:product_engineering_info.selection__product_template__bom_status__in_review
+msgid "In Review"
+msgstr "レビュー中"
+
+#. module: product_engineering_info
+#: model:ir.model.fields,field_description:product_engineering_info.field_product_group_code____last_update
+msgid "Last Modified on"
+msgstr "最終更新日"
+
+#. module: product_engineering_info
+#: model:ir.model.fields,field_description:product_engineering_info.field_product_group_code__write_uid
+msgid "Last Updated by"
+msgstr "最終更新者"
+
+#. module: product_engineering_info
+#: model:ir.model.fields,field_description:product_engineering_info.field_product_group_code__write_date
+msgid "Last Updated on"
+msgstr "最終更新日"
+
+#. module: product_engineering_info
+#: model:ir.model.fields,field_description:product_engineering_info.field_product_product__legacy_description_cad
+#: model:ir.model.fields,field_description:product_engineering_info.field_product_template__legacy_description_cad
+msgid "Legacy Description (CAD)"
+msgstr "旧説明（CAD）"
+
+#. module: product_engineering_info
+#: model:ir.model.fields,field_description:product_engineering_info.field_product_product__legacy_number_cad
+#: model:ir.model.fields,field_description:product_engineering_info.field_product_template__legacy_number_cad
+msgid "Legacy Number (CAD)"
+msgstr "旧番号（CAD）"
+
+#. module: product_engineering_info
+#: model:ir.model.fields,help:product_engineering_info.field_product_product__bom_link_released
+#: model:ir.model.fields,help:product_engineering_info.field_product_template__bom_link_released
+msgid "Link to the BOM of the latest released revision."
+msgstr "リリース済みの最新リビジョンのBOMへのリンク。"
+
+#. module: product_engineering_info
+#: model:ir.model.fields,help:product_engineering_info.field_product_product__engineering_folder_link
+#: model:ir.model.fields,help:product_engineering_info.field_product_template__engineering_folder_link
+msgid "Link to the folder holding the engineering information."
+msgstr "エンジニアリング情報が格納されているフォルダへのリンク。"
+
+#. module: product_engineering_info
+#: model:ir.model.fields,help:product_engineering_info.field_product_product__bom_link
+#: model:ir.model.fields,help:product_engineering_info.field_product_template__bom_link
+msgid "Link to the working (editable) E-BOM."
+msgstr "編集可能な作業中E-BOMへのリンク。"
+
+#. module: product_engineering_info
+#: model:ir.model.fields,field_description:product_engineering_info.field_product_product__manufacturer_id
+#: model:ir.model.fields,field_description:product_engineering_info.field_product_template__manufacturer_id
+#: model_terms:ir.ui.view,arch_db:product_engineering_info.product_template_view_form
+msgid "Manufacturer"
+msgstr "製造者"
+
+#. module: product_engineering_info
+#: model:ir.model.fields,field_description:product_engineering_info.field_product_product__manufacturer_pcode
+#: model:ir.model.fields,field_description:product_engineering_info.field_product_template__manufacturer_pcode
+msgid "Manufacturer Product Code"
+msgstr "製造者製品コード"
+
+#. module: product_engineering_info
+#: model:ir.model.fields,field_description:product_engineering_info.field_product_product__manufacturer_pname
+#: model:ir.model.fields,field_description:product_engineering_info.field_product_template__manufacturer_pname
+msgid "Manufacturer Product Name"
+msgstr "製造者製品名"
+
+#. module: product_engineering_info
+#: model:ir.model.fields,field_description:product_engineering_info.field_product_group_code__name
+msgid "Name"
+msgstr "名称"
+
+#. module: product_engineering_info
+#: model:ir.model.fields.selection,name:product_engineering_info.selection__product_template__bom_status__obsolete
+msgid "Obsolete"
+msgstr "後継なしで廃止"
+
+#. module: product_engineering_info
+#: model:ir.model.fields,help:product_engineering_info.field_product_product__successor_product_id
+#: model:ir.model.fields,help:product_engineering_info.field_product_template__successor_product_id
+msgid "Part that supersedes this one."
+msgstr "この部品を置き換える後継部品。"
+
+#. module: product_engineering_info
+#: model:ir.model.fields,help:product_engineering_info.field_product_product__compatible_product_ids
+#: model:ir.model.fields,help:product_engineering_info.field_product_template__compatible_product_ids
+msgid "Parts that may be used as substitutes when out of stock."
+msgstr "在庫切れ時に代替として使用できる部品。"
+
+#. module: product_engineering_info
+#: model:ir.model.fields.selection,name:product_engineering_info.selection__product_template__bom_status__pending_approval
+msgid "Pending Approval"
+msgstr "承認待ち"
+
+#. module: product_engineering_info
+#: model:ir.model.fields,help:product_engineering_info.field_product_product__registered_by_id
+#: model:ir.model.fields,help:product_engineering_info.field_product_template__registered_by_id
+msgid "Person who first registered the part number."
+msgstr "部品番号を最初に登録した担当者。"
+
+#. module: product_engineering_info
+#: model:ir.model,name:product_engineering_info.model_product_template
+msgid "Product"
+msgstr "プロダクト"
+
+#. module: product_engineering_info
+#: model:ir.model,name:product_engineering_info.model_product_group_code
+#: model:ir.model.fields,field_description:product_engineering_info.field_product_product__group_code_id
+#: model:ir.model.fields,field_description:product_engineering_info.field_product_template__group_code_id
+msgid "Product Group Code"
+msgstr "プロダクトグループコード"
+
+#. module: product_engineering_info
+#: model:ir.actions.act_window,name:product_engineering_info.product_group_code_action
+#: model:ir.ui.menu,name:product_engineering_info.product_group_code_menu
+msgid "Product Group Codes"
+msgstr "プロダクトグループコード"
+
+#. module: product_engineering_info
+#: model:ir.model.fields,field_description:product_engineering_info.field_product_product__registered_by_id
+#: model:ir.model.fields,field_description:product_engineering_info.field_product_template__registered_by_id
+msgid "Registered By"
+msgstr "登録者"
+
+#. module: product_engineering_info
+#: model:ir.model.fields.selection,name:product_engineering_info.selection__product_template__bom_status__released
+msgid "Released / Effective"
+msgstr "発行済み・有効"
+
+#. module: product_engineering_info
+#: model:ir.model.fields,field_description:product_engineering_info.field_product_product__successor_product_id
+#: model:ir.model.fields,field_description:product_engineering_info.field_product_template__successor_product_id
+msgid "Successor P/N"
+msgstr "後継 P/N"
+
+#. module: product_engineering_info
+#: model:ir.model.fields.selection,name:product_engineering_info.selection__product_template__bom_status__superseded
+msgid "Superseded"
+msgstr "新リビジョンに置き換えられた旧版"
+
+#. module: product_engineering_info
+#: model:ir.model.fields,field_description:product_engineering_info.field_product_product__technical_notes
+#: model:ir.model.fields,field_description:product_engineering_info.field_product_template__technical_notes
+#: model_terms:ir.ui.view,arch_db:product_engineering_info.product_template_view_form
+msgid "Technical Notes"
+msgstr "技術メモ"
+
+#. module: product_engineering_info
+#: model:ir.model.constraint,message:product_engineering_info.constraint_product_group_code_name_uniq
+msgid "The Product Group Code must be unique."
+msgstr "プロダクトグループコードは一意である必要があります。"
+
+#. module: product_engineering_info
+#: model:ir.model.fields,help:product_engineering_info.field_product_product__allow_purchase
+#: model:ir.model.fields,help:product_engineering_info.field_product_template__allow_purchase
+msgid ""
+"Whether the part may still be purchased. Unlike archiving, the product stays"
+" active in Odoo (e.g. because stock still exists)."
+msgstr "この部品を引き続き購買してよいか。アーカイブとは異なり、プロダクトはOdoo上で有効なまま（在庫が残っている場合など）。"

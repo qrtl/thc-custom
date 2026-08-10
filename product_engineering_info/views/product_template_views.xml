@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="product_template_view_form" model="ir.ui.view">
+        <field name="name">product.template.form.engineering</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_form_view" />
+        <field name="arch" type="xml">
+            <xpath
+                expr="//page[@name='general_information']//group[@name='group_general']"
+                position="inside"
+            >
+                <field name="allow_purchase" />
+                <field name="successor_product_id" />
+            </xpath>
+            <xpath
+                expr="//page[@name='purchase']/group[@name='purchase']"
+                position="after"
+            >
+                <group name="manufacturer" string="Manufacturer">
+                    <field name="manufacturer_id" />
+                    <field name="manufacturer_pname" />
+                    <field name="manufacturer_pcode" />
+                </group>
+            </xpath>
+            <xpath expr="//notebook" position="inside">
+                <page string="Engineering" name="engineering">
+                    <group>
+                        <group name="engineering_left">
+                            <field name="group_code_id" />
+                            <field
+                                name="compatible_product_ids"
+                                widget="many2many_tags"
+                            />
+                            <field name="engineering_folder_link" widget="url" />
+                        </group>
+                        <group name="engineering_right">
+                            <field name="registered_by_id" />
+                            <field name="legacy_number_cad" />
+                            <field name="legacy_description_cad" />
+                        </group>
+                    </group>
+                    <group string="E-BOM">
+                        <group name="ebom_left">
+                            <field name="bom_link" widget="url" />
+                            <field name="bom_link_released" widget="url" />
+                            <field name="bom_revision" />
+                            <field name="bom_status" />
+                        </group>
+                        <group name="ebom_right">
+                            <field name="bom_author_id" />
+                            <field name="bom_approver_id" />
+                            <field name="bom_approval_date" />
+                        </group>
+                    </group>
+                    <group string="Technical Notes">
+                        <field name="technical_notes" nolabel="1" colspan="2" />
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>
